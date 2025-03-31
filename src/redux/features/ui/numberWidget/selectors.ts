@@ -10,3 +10,7 @@ export const numberWidgetStatusSelectors = createStatusSelectors(
 export const selectCurrentMinimumEggs = (
 	state: RootState,
 ): number | undefined => state.numberWidget.currentMinimumEggs;
+
+export const selectLastFetchCurrentMinimumEggs = (
+	state: RootState,
+): null | string => state.numberWidget.lastFetchCurrentMinimumEggs;

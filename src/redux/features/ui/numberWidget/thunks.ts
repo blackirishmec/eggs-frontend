@@ -3,7 +3,6 @@ import { isAxiosError } from 'axios';
 
 import type { AppDispatch, RootState } from '@/redux/store';
 import type { GetCurrentMinimumEggsResponse } from '@/redux/types/GetCurrentMinimumEggsResponse';
-import type { AxiosResponse } from 'axios';
 
 import { axiosInstance } from '@/main';
 
@@ -13,16 +12,15 @@ export const fetchCurrentMinimumEggs = createAsyncThunk<
 	{ dispatch: AppDispatch; state: RootState }
 >('numberWidget/fetchCurrentMinimumEggs', async (_, { rejectWithValue }) => {
 	try {
-		const response =
-			await axiosInstance.get<
-				AxiosResponse<GetCurrentMinimumEggsResponse>
-			>(`/currentMinimumEggs`);
+		const { data } = await axiosInstance.get<GetCurrentMinimumEggsResponse>(
+			`/current-minimum-eggs`,
+		);
 
-		if (response.data.data.result === undefined) {
+		if (data.result === undefined) {
 			throw Error('fetchCurrentMinimumEggs thunk failed!');
 		}
 
-		return response.data.data.result.minimumEggs;
+		return data.result.minimumEggs;
 	} catch (error) {
 		if (isAxiosError(error)) {
 			return rejectWithValue(error.response?.data ?? error.message);

@@ -13,8 +13,18 @@ const numberWidgetSlice = createSlice({
 		resetCurrentMinimumEggs: state => {
 			state.currentMinimumEggs = initialState.currentMinimumEggs;
 		},
+		resetLastFetchCurrentMinimumEggs: state => {
+			state.lastFetchCurrentMinimumEggs =
+				initialState.lastFetchCurrentMinimumEggs;
+		},
 		setCurrentMinimumEggs: (state, action: PayloadAction<number>) => {
 			state.currentMinimumEggs = action.payload;
+		},
+		setLastFetchCurrentMinimumEggs: (
+			state,
+			action: PayloadAction<string>,
+		) => {
+			state.lastFetchCurrentMinimumEggs = action.payload;
 		},
 	},
 	extraReducers: builder => {
@@ -24,12 +34,17 @@ const numberWidgetSlice = createSlice({
 			statusStateProperty: 'fetchCurrentMinimumEggsStatus',
 			onFulfilled(state, action) {
 				state.currentMinimumEggs = action.payload;
+				state.lastFetchCurrentMinimumEggs = new Date().toISOString();
 			},
 		});
 	},
 });
 
-export const { resetCurrentMinimumEggs, setCurrentMinimumEggs } =
-	numberWidgetSlice.actions;
+export const {
+	resetCurrentMinimumEggs,
+	setCurrentMinimumEggs,
+	resetLastFetchCurrentMinimumEggs,
+	setLastFetchCurrentMinimumEggs,
+} = numberWidgetSlice.actions;
 
 export default numberWidgetSlice.reducer;
