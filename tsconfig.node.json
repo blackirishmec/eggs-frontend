@@ -25,6 +25,7 @@
 				"./src/*"
 			]
 		},
+
 	},
-	"include": ["vite.config.ts", "eslint-plugin-import.d.ts"]
+	"include": ["vite.config.ts", "eslint-plugin-import.d.ts", "vite-env.d.ts"]
 }
