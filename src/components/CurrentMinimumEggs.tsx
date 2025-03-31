@@ -38,7 +38,7 @@ function CurrentMinimumEggsBase() {
 					<Row>
 						<h3>Today, the poorest American worker is valued at</h3>
 					</Row>
-					<Row className="bg-gray-800 text-white aspect-square p-6 mt-4 w-fit">
+					<Row className="bg-gray-800 text-white aspect-square px-6 pb-6 mt-4 w-fit">
 						<Col>
 							<Row
 								className="h-2/3"
