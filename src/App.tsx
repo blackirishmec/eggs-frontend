@@ -3,9 +3,9 @@ import { Col, Row } from './components/layout/FlexComponents';
 
 function App() {
 	return (
-		<Row className="flex-1 poppins-regular">
+		<Row className="flex-1 py-12 px-4 poppins-regular">
 			<Col className="flex-1" childrenHorizontalPosition="center">
-				<Row>
+				<Row className="pb-12">
 					<h1>
 						On <s>y</s>
 						<u>Our</u> Face
