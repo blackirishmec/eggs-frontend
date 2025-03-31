@@ -1,3 +1,5 @@
+import MinimumEggsTrendChart from '@/components/MinimumEggsTrendChart';
+
 import './App.css';
 import AppTitle from './components/AppTitle';
 import CurrentMinimumEggs from './components/CurrentMinimumEggs';
@@ -18,16 +20,20 @@ function App() {
 						>
 							<CurrentMinimumEggs />
 						</Row>
-						<Row className="flex-1">Chart</Row>
+						<Row className="flex-1">
+							<MinimumEggsTrendChart />
+						</Row>
 					</Col>
 				</Row>
 				<Row>
-					<Col className="flex-1">
+					<Col className="flex-1" childrenHorizontalPosition="center">
 						<Row>Share</Row>
-						<Row>Buy me an egg</Row>
-						<Row>
-							This application sources its data from the Federal
-							Reserve bank of St. Louis's FRED api.
+						<Row className="mt-4">Buy me an egg</Row>
+						<Row className="mt-4">
+							<i>
+								This application sources its data from the
+								Federal Reserve bank of St. Louis's FRED api.
+							</i>
 						</Row>
 					</Col>
 				</Row>
