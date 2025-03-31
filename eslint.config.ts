@@ -213,7 +213,7 @@ export default [
 	},
 
 	{
-		files: ['eslint.config.ts'],
+		files: ['eslint.config.ts', 'vite.config.ts'],
 		rules: {
 			'import/no-unresolved': 'off',
 		},
