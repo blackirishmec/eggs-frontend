@@ -12,7 +12,10 @@ function App() {
 				</Row>
 				<Row className="flex-1">
 					<Col className="flex-1">
-						<Row className="flex-1">
+						<Row
+							className="flex-1"
+							childrenHorizontalPosition="center"
+						>
 							<NumberWidget />
 						</Row>
 						<Row className="flex-1">Chart</Row>
