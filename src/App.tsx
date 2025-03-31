@@ -1,3 +1,5 @@
+import BuyUsAEgg from '@/components/BuyUsAEgg';
+import Disclaimer from '@/components/Disclaimer';
 import MinimumEggsTrendChart from '@/components/MinimumEggsTrendChart';
 
 import './App.css';
@@ -27,13 +29,12 @@ function App() {
 				</Row>
 				<Row>
 					<Col className="flex-1" childrenHorizontalPosition="center">
-						<Row>Share</Row>
-						<Row className="mt-4">Buy me an egg</Row>
+						{/* <Row>Share</Row> */}
 						<Row className="mt-4">
-							<i>
-								This application sources its data from the
-								Federal Reserve bank of St. Louis's FRED api.
-							</i>
+							<BuyUsAEgg />
+						</Row>
+						<Row className="mt-6">
+							<Disclaimer />
 						</Row>
 					</Col>
 				</Row>

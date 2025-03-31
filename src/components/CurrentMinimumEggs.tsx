@@ -33,7 +33,7 @@ function CurrentMinimumEggsBase() {
 
 	return (
 		currentMinimumEggs !== undefined && (
-			<div className="">
+			<div>
 				<Col childrenHorizontalPosition="center">
 					<Row>
 						<h3>Today, the poorest American worker is valued at</h3>

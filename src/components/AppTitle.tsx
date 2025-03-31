@@ -3,7 +3,7 @@ import { memo } from 'react';
 function AppTitleBase() {
 	return (
 		<h1>
-			On <s>y</s>
+			On <s className="text-gray-500">y</s>
 			<u>Our</u> Face
 		</h1>
 	);
