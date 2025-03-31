@@ -3,6 +3,10 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { EggPrice } from '@/interfaces/db_models/eggPriceModels';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
+import {
+	eggPriceFetched,
+	eggPricesFetched,
+} from '@/redux/features/model/eggPrices/actions';
 import eggPricesAdapter from '@/redux/features/model/eggPrices/eggPricesAdapter';
 import initialState from '@/redux/features/model/eggPrices/initialState';
 
