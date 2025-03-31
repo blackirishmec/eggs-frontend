@@ -1,8 +1,31 @@
-import { memo } from 'react';
+import { memo, useEffect } from 'react';
 
-import { Col, Row } from './layout/FlexComponents';
+import { Col, Row } from '@/components/layout/FlexComponents';
+import {
+	fetchCurrentMinimumEggs,
+	selectCurrentMinimumEggs,
+} from '@/redux/features/ui/numberWidget';
+import useAppDispatch from '@/redux/hooks/useAppDispatch';
+import useTypedSelector from '@/redux/hooks/useTypedSelector';
+// import {
+// 	fetchCurrentMinimumEggs,
+// 	selectCurrentMinimumEggs,
+// } from '@/redux/features/ui/numberWidget';
+// // import useAppDispatch from '@/redux/hooks/useAppDispatch';
+// import useTypedSelector from '@/redux/hooks/useTypedSelector';
 
 function NumberWidgetBase() {
+	const dispatch = useAppDispatch();
+
+	const currentMinimumEggs = useTypedSelector(selectCurrentMinimumEggs);
+	useEffect(() => {
+		if (currentMinimumEggs === undefined) {
+			dispatch(fetchCurrentMinimumEggs()).catch(reason =>
+				console.log('reason:', reason),
+			);
+		}
+	}, [currentMinimumEggs, fetchCurrentMinimumEggs]);
+
 	return (
 		<div className="text-white">
 			<Row className="bg-gray-800 aspect-square p-6">
@@ -19,7 +42,7 @@ function NumberWidgetBase() {
 						childrenVerticalPosition="center"
 						childrenHorizontalPosition="center"
 					>
-						<h2>17 Eggs</h2>
+						<h2>${currentMinimumEggs} Eggs</h2>
 					</Row>
 				</Col>
 			</Row>
