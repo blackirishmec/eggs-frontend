@@ -33,25 +33,30 @@ function NumberWidgetBase() {
 
 	return (
 		currentMinimumEggs !== undefined && (
-			<div className="text-white">
-				<Row className="bg-gray-800 aspect-square p-6">
-					<Col>
-						<Row
-							className="h-1/3"
-							childrenVerticalPosition="center"
-							childrenHorizontalPosition="center"
-						>
-							<h3>1 hour =</h3>
-						</Row>
-						<Row
-							className="h-2/3"
-							childrenVerticalPosition="center"
-							childrenHorizontalPosition="center"
-						>
-							<h2>{Math.floor(currentMinimumEggs)} Eggs</h2>
-						</Row>
-					</Col>
-				</Row>
+			<div className="">
+				<Col childrenHorizontalPosition="center">
+					<Row>
+						<h3>The poorest American worker is valued at...</h3>
+					</Row>
+					<Row className="bg-gray-800 text-white aspect-square p-6 mt-4 w-fit">
+						<Col>
+							<Row
+								className="h-2/3"
+								childrenVerticalPosition="center"
+								childrenHorizontalPosition="center"
+							>
+								<h2>{Math.floor(currentMinimumEggs)} Eggs</h2>
+							</Row>
+							<Row
+								className="h-1/3"
+								childrenVerticalPosition="center"
+								childrenHorizontalPosition="center"
+							>
+								<h3>per hour</h3>
+							</Row>
+						</Col>
+					</Row>
+				</Col>
 			</div>
 		)
 	);

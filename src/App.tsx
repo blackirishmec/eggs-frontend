@@ -10,12 +10,6 @@ function App() {
 				<Row className="pb-12">
 					<AppTitle />
 				</Row>
-				<Row className="pb-12">
-					<h3>
-						This app visualizes the value America places on one hour
-						of its poorest worker's time, in eggs.
-					</h3>
-				</Row>
 				<Row className="flex-1">
 					<Col className="flex-1">
 						<Row
