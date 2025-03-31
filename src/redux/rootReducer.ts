@@ -2,6 +2,7 @@ import { combineReducers } from '@reduxjs/toolkit';
 
 import { eggPricesReducer } from '@/redux/features/model/eggPrices';
 import { numberWidgetReducer } from '@/redux/features/ui/numberWidget';
+import { trendChartReducer } from '@/redux/features/ui/trendChart';
 
 // UI reducers - import the reducer directly from slice to avoid circular deps
 // import authReducer from './features/ui/auth/slice';
@@ -18,6 +19,7 @@ const appReducer = combineReducers({
 	eggPrices: eggPricesReducer,
 
 	numberWidget: numberWidgetReducer,
+	trendChart: trendChartReducer,
 	// auth: authReducer,
 	// userTeams: userTeamsReducer,
 });

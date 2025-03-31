@@ -4,6 +4,7 @@ import type { TrendDataObject } from '@/redux/features/ui/trendChart/types';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
 import initialState from '@/redux/features/ui/trendChart/initialState';
+import { fetchMinimumEggsTrendData } from '@/redux/features/ui/trendChart/thunks';
 import handleAsyncState from '@/redux/utilities/handleAsyncState';
 
 const trendChartSlice = createSlice({
