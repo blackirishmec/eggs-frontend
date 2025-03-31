@@ -17,7 +17,13 @@ function App() {
 						<Row className="flex-1">Chart</Row>
 					</Col>
 				</Row>
-				<Row>Footer</Row>
+				<Row>
+					<Col className="flex-1">
+						<Row>Share</Row>
+						<Row>Buy me an egg</Row>
+						<Row>Disclaimer</Row>
+					</Col>
+				</Row>
 			</Col>
 		</Row>
 	);
