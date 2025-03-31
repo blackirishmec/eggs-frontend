@@ -21,7 +21,10 @@ function App() {
 					<Col className="flex-1">
 						<Row>Share</Row>
 						<Row>Buy me an egg</Row>
-						<Row>Disclaimer</Row>
+						<Row>
+							This application sources its data from the Federal
+							Reserve bank of St. Louis's FRED api.
+						</Row>
 					</Col>
 				</Row>
 			</Col>
