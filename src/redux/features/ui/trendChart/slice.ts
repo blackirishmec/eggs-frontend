@@ -11,6 +11,12 @@ const trendChartSlice = createSlice({
 	name: 'trendChart',
 	initialState,
 	reducers: {
+		resetTrendChartSlice: state => {
+			state.minimumEggsTrendData = [...initialState.minimumEggsTrendData];
+			state.lastFetchMinimumEggsTrendData =
+				initialState.lastFetchMinimumEggsTrendData;
+			state.adjustForInflation = initialState.adjustForInflation;
+		},
 		resetMinimumEggs: state => {
 			state.minimumEggsTrendData = [...initialState.minimumEggsTrendData];
 		},
@@ -57,6 +63,7 @@ export const {
 	setMinimumEggsTrendData,
 	setLastFetchMinimumEggsTrendData,
 	setAdjustForInflation,
+	resetTrendChartSlice,
 } = trendChartSlice.actions;
 
 export default trendChartSlice.reducer;

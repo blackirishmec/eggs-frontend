@@ -11,6 +11,8 @@ import {
 import { memo, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 
+import type { ChartOptions } from 'chart.js';
+
 import Logger from '@/utilities/Logger';
 
 import { Col, Row } from '@/components/layout/FlexComponents';
@@ -32,11 +34,36 @@ ChartJS.register(
 	Legend,
 );
 
-export const options = {
+export const options: ChartOptions<'line'> = {
 	responsive: true,
 	plugins: {
 		legend: {
 			display: false,
+		},
+		tooltip: {
+			titleFont: {
+				size: 24,
+			},
+			bodyFont: {
+				size: 24,
+			},
+			usePointStyle: true,
+		},
+	},
+	scales: {
+		x: {
+			display: true,
+			title: {
+				display: true,
+				text: 'Date',
+			},
+		},
+		y: {
+			display: true,
+			title: {
+				display: true,
+				text: 'Eggs per Hour',
+			},
 		},
 	},
 };
@@ -68,9 +95,8 @@ function MinimumEggsTrendChartBase() {
 		datasets: [
 			{
 				label: 'Eggs Per Hour',
-				data: minimumEggsTrendData.map(
-					minimumEggsTrendDataObject =>
-						minimumEggsTrendDataObject.value,
+				data: minimumEggsTrendData.map(minimumEggsTrendDataObject =>
+					Math.floor(minimumEggsTrendDataObject.value),
 				),
 				borderColor: 'rgb(255, 99, 132)',
 				backgroundColor: 'rgba(255, 99, 132, 0.5)',

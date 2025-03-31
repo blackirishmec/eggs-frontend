@@ -7,6 +7,7 @@ export {
 	resetAdjustForInflation,
 	resetLastFetchMinimumEggsTrendData,
 	resetMinimumEggs,
+	resetTrendChartSlice,
 	setAdjustForInflation,
 	setLastFetchMinimumEggsTrendData,
 	setMinimumEggsTrendData,

@@ -3,8 +3,7 @@ import { memo } from 'react';
 function AppTitleBase() {
 	return (
 		<h1>
-			On <s className="text-gray-500">y</s>
-			<u>Our</u> Face
+			Minimum <s className="text-gray-500">Wage</s> Eggs
 		</h1>
 	);
 }
