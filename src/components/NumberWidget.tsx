@@ -6,22 +6,21 @@ import { Col, Row } from '@/components/layout/FlexComponents';
 import {
 	fetchCurrentMinimumEggs,
 	selectCurrentMinimumEggs,
+	selectReadyToFetchCurrentMinimumEggs,
 } from '@/redux/features/ui/numberWidget';
 import useAppDispatch from '@/redux/hooks/useAppDispatch';
 import useTypedSelector from '@/redux/hooks/useTypedSelector';
-// import {
-// 	fetchCurrentMinimumEggs,
-// 	selectCurrentMinimumEggs,
-// } from '@/redux/features/ui/numberWidget';
-// // import useAppDispatch from '@/redux/hooks/useAppDispatch';
-// import useTypedSelector from '@/redux/hooks/useTypedSelector';
 
 function NumberWidgetBase() {
 	const dispatch = useAppDispatch();
 
 	const currentMinimumEggs = useTypedSelector(selectCurrentMinimumEggs);
+	const readyToFetchCurrentMinimumEggs = useTypedSelector(
+		selectReadyToFetchCurrentMinimumEggs,
+	);
+
 	useEffect(() => {
-		if (currentMinimumEggs === undefined) {
+		if (readyToFetchCurrentMinimumEggs) {
 			dispatch(fetchCurrentMinimumEggs()).catch(reason =>
 				Logger.infoObject(
 					'reason',
@@ -30,7 +29,7 @@ function NumberWidgetBase() {
 				),
 			);
 		}
-	}, [currentMinimumEggs, fetchCurrentMinimumEggs]);
+	}, [readyToFetchCurrentMinimumEggs, fetchCurrentMinimumEggs]);
 
 	return (
 		currentMinimumEggs !== undefined && (
