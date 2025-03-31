@@ -1,5 +1,7 @@
 import { memo, useEffect } from 'react';
 
+import Logger from '@/utilities/Logger';
+
 import { Col, Row } from '@/components/layout/FlexComponents';
 import {
 	fetchCurrentMinimumEggs,
@@ -21,7 +23,11 @@ function NumberWidgetBase() {
 	useEffect(() => {
 		if (currentMinimumEggs === undefined) {
 			dispatch(fetchCurrentMinimumEggs()).catch(reason =>
-				console.log('reason:', reason),
+				Logger.infoObject(
+					'reason',
+					reason,
+					'src/components/NumberWidget.tsx:24',
+				),
 			);
 		}
 	}, [currentMinimumEggs, fetchCurrentMinimumEggs]);
