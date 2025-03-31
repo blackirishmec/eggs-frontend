@@ -1,7 +1,7 @@
 import './App.css';
 import AppTitle from './components/AppTitle';
+import CurrentMinimumEggs from './components/CurrentMinimumEggs';
 import { Col, Row } from './components/layout/FlexComponents';
-import NumberWidget from './components/NumberWidget';
 
 function App() {
 	return (
@@ -16,7 +16,7 @@ function App() {
 							className="flex-1"
 							childrenHorizontalPosition="center"
 						>
-							<NumberWidget />
+							<CurrentMinimumEggs />
 						</Row>
 						<Row className="flex-1">Chart</Row>
 					</Col>

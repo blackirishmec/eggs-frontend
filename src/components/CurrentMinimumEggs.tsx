@@ -11,7 +11,7 @@ import {
 import useAppDispatch from '@/redux/hooks/useAppDispatch';
 import useTypedSelector from '@/redux/hooks/useTypedSelector';
 
-function NumberWidgetBase() {
+function CurrentMinimumEggsBase() {
 	const dispatch = useAppDispatch();
 
 	const currentMinimumEggs = useTypedSelector(selectCurrentMinimumEggs);
@@ -25,7 +25,7 @@ function NumberWidgetBase() {
 				Logger.infoObject(
 					'reason',
 					reason,
-					'src/components/NumberWidget.tsx:24',
+					'src/components/CurrentMinimumEggs.tsx:24',
 				),
 			);
 		}
@@ -36,7 +36,7 @@ function NumberWidgetBase() {
 			<div className="">
 				<Col childrenHorizontalPosition="center">
 					<Row>
-						<h3>The poorest American worker is valued at...</h3>
+						<h3>Today, the poorest American worker is valued at</h3>
 					</Row>
 					<Row className="bg-gray-800 text-white aspect-square p-6 mt-4 w-fit">
 						<Col>
@@ -62,6 +62,6 @@ function NumberWidgetBase() {
 	);
 }
 
-const NumberWidget = memo(NumberWidgetBase);
+const CurrentMinimumEggs = memo(CurrentMinimumEggsBase);
 
-export default NumberWidget;
+export default CurrentMinimumEggs;
