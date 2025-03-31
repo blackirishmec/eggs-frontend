@@ -17,17 +17,17 @@ function App() {
 				<Row className="flex-1">
 					<Col className="flex-1">
 						<Row
-							className="flex-1"
+							// className="flex-1"
 							childrenHorizontalPosition="center"
 						>
 							<CurrentMinimumEggs />
 						</Row>
-						<Row className="flex-1">
+						<Row className="flex-1 mt-20">
 							<MinimumEggsTrendChart />
 						</Row>
 					</Col>
 				</Row>
-				<Row>
+				<Row className="mt-12">
 					<Col className="flex-1" childrenHorizontalPosition="center">
 						{/* <Row>Share</Row> */}
 						<Row className="mt-4">
