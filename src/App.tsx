@@ -31,7 +31,7 @@ function App() {
 					<Col className="flex-1" childrenHorizontalPosition="center">
 						<Row>
 							<a href="https://bsky.app/intent/compose?text=I%27m%20reading%20through%20the%20Bluesky%20API%20docs%21%20%F0%9F%A6%8B%0Ahttps%3A//docs.bsky.app">
-								Share
+								Share on Bluesky
 							</a>
 						</Row>
 						<Row className="mt-4">

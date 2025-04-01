@@ -11,7 +11,11 @@ import {
 import { memo, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 
-import type { ChartOptions } from 'chart.js';
+import type {
+	ChartData,
+	ChartOptions,
+	ScriptableLineSegmentContext,
+} from 'chart.js';
 
 import Logger from '@/utilities/Logger';
 
@@ -57,6 +61,14 @@ export const options: ChartOptions<'line'> = {
 				display: true,
 				text: 'Date',
 			},
+			// ticks: {
+			// 	// Include a dollar sign in the ticks
+			// 	callback(value, index, ticks) {
+			// 		const date = new Date(value);
+			// 		return '$' + value;
+			// 	},
+			// },
+			// type: 'timeseries',
 		},
 		y: {
 			display: true,
@@ -88,7 +100,12 @@ function MinimumEggsTrendChartBase() {
 		}
 	}, [readyToFetchMinimumEggsTrendData, fetchMinimumEggsTrendData]);
 
-	const data = {
+	const up = (ctx: ScriptableLineSegmentContext, colorString: string) =>
+		ctx.p0.parsed.y < ctx.p1.parsed.y ? colorString : undefined;
+	const down = (ctx: ScriptableLineSegmentContext, colorString: string) =>
+		ctx.p0.parsed.y > ctx.p1.parsed.y ? colorString : undefined;
+
+	const data: ChartData<'line', number[], string> = {
 		labels: minimumEggsTrendData.map(
 			minimumEggsTrendDataObject => minimumEggsTrendDataObject.date,
 		),
@@ -98,8 +115,13 @@ function MinimumEggsTrendChartBase() {
 				data: minimumEggsTrendData.map(minimumEggsTrendDataObject =>
 					Math.floor(minimumEggsTrendDataObject.value),
 				),
-				borderColor: 'rgb(255, 99, 132)',
-				backgroundColor: 'rgba(255, 99, 132, 0.5)',
+				// borderColor: 'rgb(75,255,75)',
+				backgroundColor: 'rgb(55, 55, 255)',
+				segment: {
+					borderColor: ctx =>
+						up(ctx, 'rgb(75,255,75)') ??
+						down(ctx, 'rgb(255,75,75)'),
+				},
 			},
 		],
 	};
